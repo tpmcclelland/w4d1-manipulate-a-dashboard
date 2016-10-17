@@ -23,7 +23,7 @@ var helloH1 = document.querySelectorAll('#hello')
 console.log(helloH1)
 
 //Convert NodeList to an Array data type
-// console.log(Array.from(navItems).includes('li'))
+console.log(Array.from(navItems).includes('li'))
 
 
 // navItems.forEach(function(navItem) {
