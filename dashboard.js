@@ -1,10 +1,41 @@
-// 1. Count the number of records in the "Current Quarter Details" table.
 
+// 1. Count the number of records in the "Current Quarter Details" table.
+var records = document.querySelectorAll('table > tbody > tr')
+console.log(records.length)
 
 // 2. Set each dashboard image to different images, one for each season. Make sure you also set the alt="" attribute with an appropriate description.
-
+var images = document.querySelectorAll('img')
+newImages = [
+    {
+        src: '/img/img_300.jpg',
+        alt: 'Winter Pic'
+    },
+    {
+        src: '/img/img_301.jpg',
+        alt: 'Spring Pic'
+    },
+    {
+        src: '/img/img_302.jpg',
+        alt: 'Summer Pic'
+    },
+    {
+        src: '/img/img_304.jpg',
+        alt: 'Fall Pic'
+    }
+]
+images.forEach(function(image, index) {
+    image.setAttribute('src', newImages[index].src)
+    image.setAttribute('alt', newImages[index].alt)
+})
 
 // 3. Below each dashboard image, there's a season/quarter name. Below those, there are three dots. Replace those three dots with a randomly generated number formatted as currency, like $12,589.00.
+
+var dots = document.querySelectorAll('span.text-muted')
+// console.log(dots)
+dots.forEach(function(dot) {
+    // console.log(dot)
+    dot.innerHTML = accounting.formatMoney(Math.random() * 3948 + 14857)
+})
 
 
 // 4. Change the currently selected left side menu item from Overview to Reports.
